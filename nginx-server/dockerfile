@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+RUN mkdir -p /run/nginx
+RUN apk update
+RUN apk add bash nginx
+
+EXPOSE 80
+EXPOSE 443
+STOPSIGNAL SIGTERM
+
+CMD ["nginx", "-g", "daemon off;"]
