@@ -1,0 +1,8 @@
+FROM alpine:latest
+# install wget, nginx, mysql
+RUN apk add openrc 
+RUN apk add mysql mysql-client
+COPY entrypoint.sh /etc/entrypoint.sh
+COPY config.sql /etc/config.sql
+VOLUME ["/var/lib/mysql"]
+CMD sh /etc/entrypoint.sh
