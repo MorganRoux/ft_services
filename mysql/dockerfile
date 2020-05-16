@@ -5,4 +5,7 @@ RUN apk add mysql mysql-client
 COPY entrypoint.sh /etc/entrypoint.sh
 COPY config.sql /etc/config.sql
 VOLUME ["/var/lib/mysql"]
+
+EXPOSE 3306
+
 CMD sh /etc/entrypoint.sh
