@@ -14,5 +14,8 @@ COPY config.inc.php /data/phpmyadmin/config.inc.php
 COPY entrypoint.sh /etc/entrypoint.sh
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY testphp.php /data/phpmyadmin
+
+VOLUME ["/sys/fs/cgroup"]
+
 EXPOSE 5000
 CMD sh /etc/entrypoint.sh
