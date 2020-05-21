@@ -11,4 +11,4 @@ echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'admin'@'%' WITH GRANT OPTION;" | m
 #echo "update mysql.user set plugin='mysql_native_password' where user='root';" | mysql -u root --skip-password
 echo "DROP DATABASE test" | mysql -u root --skip-password
 echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password#
-#mysql wordpress -u root --password= < wordpress.sql
+mysql wordpress -u root --password= < wordpress.sql
