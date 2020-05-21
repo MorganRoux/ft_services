@@ -3,7 +3,7 @@ FROM alpine:latest
 RUN apk update
 RUN apk add bash vsftpd
 
-COPY entrypoint /
+COPY entrypoint.sh .
 
 COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY localhost.crt /etc/vsftpd/vsftpd.crt
@@ -15,5 +15,5 @@ COPY index.html /data/www/index.html
 EXPOSE 20 21 
 #EXPOSE  13450-13500
 
-ENTRYPOINT ["sh", "entrypoint"]
+CMD ./entrypoint.sh
 

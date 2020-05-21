@@ -11,8 +11,8 @@ spec:
   # an external load-balanced IP for the frontend service.
   # type: LoadBalancer
   ports:
-  - port: 80
-    nodePort: 80
+  - port: 5050
+    nodePort: 5050
   selector:
     app: wp
 ---
@@ -38,4 +38,4 @@ spec:
         image: wp-image:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
+        - containerPort: 5050
