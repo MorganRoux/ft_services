@@ -30,9 +30,9 @@ $cfg['ServerDefault'] = $i;
 /*  Authentication method (valid choices: config, http, signon or cookie) */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'mysql-service';
-$cfg['Servers'][$i]['user'] = 'newuser';
-$cfg['Servers'][$i]['password'] = 'password';
+$cfg['Servers'][$i]['host'] = 'mysql';
+$cfg['Servers'][$i]['user'] = 'admin';
+$cfg['Servers'][$i]['password'] = 'admin';
 $cfg['Servers'][$i]['port'] = 3306; 
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
