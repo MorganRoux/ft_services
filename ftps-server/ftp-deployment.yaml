@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: ftp-service
   labels:
-    app: nginx
+    app: ftp
 spec:
   # comment or delete the following line if you want to use a LoadBalancer
   type: NodePort 
@@ -11,30 +11,42 @@ spec:
   # an external load-balanced IP for the frontend service.
   # type: LoadBalancer
   ports:
-  - port: 80
-    nodePort: 80
+  - name: ftp1
+    port: 20
+    nodePort: 20
+  - name: ftp2
+    port: 21
+    nodePort: 21
+  - name: ftp3
+    port: 13450
+    nodePort: 13450
   selector:
-    app: nginx
+    app: ftp
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: nginx-dep
+  name: ftp-dep
   labels:
-    app: nginx
+    app: ftp
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: ftp
   replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: nginx
+        app: ftp
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:latest
+        - name: ftp-container
+          image: ftp-image:latest
           imagePullPolicy: Never
           ports:
-          - containerPort: 80
+          - containerPort: 20
+            name: ftp1
+          - containerPort: 21
+            name: ftp2
+          - containerPort: 13450
+            name: ftp3
