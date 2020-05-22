@@ -1,0 +1,7 @@
+FROM alpine:latest
+
+RUN apk update
+RUN apk add bash nginx
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+RUN apk add grafana
