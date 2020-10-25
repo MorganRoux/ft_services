@@ -3,19 +3,18 @@ kind: Service
 metadata:
   name: nginx-service
   labels:
-    app: nginx
+    app: nginx  
+  annotations:
+    metallb.universe.tf/allow-shared-ip: ekvm
+
 spec:
-  # comment or delete the following line if you want to use a LoadBalancer
-  type: NodePort 
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  # type: LoadBalancer
+  type: LoadBalancer 
   ports:
   - port: 80
-    nodePort: 80
+    targetPort: 80
     name: http
   - port: 443
-    nodePort: 443
+    targetPort: 443
     name: https
   selector:
     app: nginx

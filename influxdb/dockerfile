@@ -5,5 +5,5 @@ RUN apk add bash openrc
 RUN apk add influxdb
 COPY influxdb.conf ./
 COPY entrypoint.sh ./
-EXPOSE 8086
+#EXPOSE 8086
 CMD sh ./entrypoint.sh

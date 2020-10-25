@@ -4,11 +4,13 @@ metadata:
   name: mysql
   labels:
     app: mysql
+  annotations:
+    metallb.universe.tf/allow-shared-ip: ekvm
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 3306
-    nodePort: 3306
+    targetPort: 3306
     protocol: TCP
     name: http
   selector:
