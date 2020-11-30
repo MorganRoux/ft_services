@@ -23,8 +23,8 @@ COPY localhost.key /etc/vsftpd/vsftpd.key
 RUN mkdir -p /data/www
 COPY index.html /data/www/index.html
 
-# EXPOSE 20 21 
-# EXPOSE  13450
+EXPOSE 20 21 
+EXPOSE  13450
 
 CMD sh ./entrypoint.sh
 
