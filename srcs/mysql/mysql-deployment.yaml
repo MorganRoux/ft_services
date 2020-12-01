@@ -76,6 +76,13 @@ spec:
         ports:
         - containerPort: 3306
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+              - cat
+              - /etc/health
+          initialDelaySeconds: 1
+          periodSeconds: 1
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql

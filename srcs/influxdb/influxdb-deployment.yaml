@@ -62,6 +62,13 @@ spec:
         ports:
         - containerPort: 8086
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+              - cat
+              - /etc/health
+          initialDelaySeconds: 1
+          periodSeconds: 1
         volumeMounts:
         - name: influxdb-persistent-storage
           mountPath: /var/lib/influxdb

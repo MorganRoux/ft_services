@@ -48,3 +48,10 @@ spec:
             name: ftp2
           - containerPort: 13450
             name: ftp3
+          livenessProbe:
+            exec:
+              command:
+                - cat
+                - /etc/health
+            initialDelaySeconds: 1
+            periodSeconds: 1

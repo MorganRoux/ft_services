@@ -37,3 +37,10 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 5050
+        livenessProbe:
+          exec:
+            command:
+              - cat
+              - /etc/health
+          initialDelaySeconds: 1
+          periodSeconds: 1
