@@ -1,9 +1,17 @@
-FROM alpine:latest
+FROM alpine:3.12.1
 
 RUN apk update
-RUN apk add bash openrc
+RUN apk add bash openrc vim
+
 RUN apk add influxdb
-COPY influxdb.conf ./
+RUN mkdir -p /etc/influxdb
+COPY influxdb.conf /etc/influxdb
+
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk add telegraf
+RUN mkdir /etc/telegraf && rm /etc/telegraf.conf
+COPY telegraf.conf /etc/telegraf/
+
 COPY entrypoint.sh ./
 #EXPOSE 8086
 CMD sh ./entrypoint.sh

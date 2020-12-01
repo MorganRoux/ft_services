@@ -14,23 +14,15 @@ docker build -t wp-image ./srcs/wordpress/
 docker build -t influxdb-image ./srcs/influxdb/
 docker build -t grafana-image ./srcs/grafana/
 
-#kubectl delete -f ./metallb/configmap.yaml
-kubectl create -f ./srcs/metallb/configmap.yaml
-
-#kubectl delete -f ./nginx-server/nginx-deployment.yaml
+kubectl create -f ./srcs/metallb/metallb-configmap.yaml
 kubectl apply -f ./srcs/nginx-server/nginx-deployment.yaml
-
-#kubectl delete -f ./ftps-server/ftp-deployment.yaml
 kubectl apply -f ./srcs/ftps-server/ftp-deployment.yaml
-
-#kubectl delete -f ./phpmyadmin/phpmyadmin-deployment.yaml
 kubectl apply -f ./srcs/phpmyadmin/phpmyadmin-deployment.yaml
-
-#kubectl delete -f ./mysql/mysql-deployment.yaml
 kubectl apply -f ./srcs/mysql/mysql-deployment.yaml
-
-#kubectl delete -f ./wordpress/wp-deployment.yaml
 kubectl apply -f ./srcs/wordpress/wp-deployment.yaml
+kubectl apply -f ./srcs/influxdb/influxdb-deployment.yaml
+kubectl apply -f ./srcs/grafana/grafana-deployment.yaml
+kubectl apply -f ./srcs/grafana/grafana-deployment.yaml
 
 sleep 4
 

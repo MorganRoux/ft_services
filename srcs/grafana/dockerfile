@@ -1,7 +1,11 @@
-FROM alpine:latest
+FROM alpine:3.12.1
 
 RUN apk update
 RUN apk add bash nginx
-#RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 RUN apk add grafana
+WORKDIR /usr/share/grafana
+COPY sample.ini ./conf/custom.ini
+COPY entrypoint.sh .
+CMD sh ./entrypoint.sh
