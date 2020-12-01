@@ -1,8 +1,4 @@
-minikube stop
-minikube delete
-minikube start --cpus=2 --disk-size 11000 --vm-driver virtualbox --extra-config=apiserver.service-node-port-range=1-35000
-minikube addons enable dashboard
-minikube addons enable metallb
+
 
 #=========
 eval $(minikube docker-env)

@@ -27,4 +27,4 @@ echo "testuser:testpwd" | chpasswd
 # echo "reverse_lookup_enable=${REVERSE_LOOKUP_ENABLE}" >> /etc/vsftpd/vsftpd.conf
 
 #lancement du serveur
-/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
+/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf & telegraf
