@@ -23,7 +23,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Influx_wordpress",
+        "datasource": "Influx_mysql",
         "fieldConfig": {
           "defaults": {
             "custom": {
@@ -162,7 +162,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "wordpress CPU + Mem",
+        "title": "mysql CPU + Mem",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -212,7 +212,7 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "Wordpress dashboard",
+    "title": "Mysql dashboard",
     "uid": null,
     "version": 0
   }

@@ -6,4 +6,4 @@ providers:
   folder: ''
   type: file
   options:
-    path: /grafana-7.2.0/conf/provisioning/dashboards
+    path: /etc/dashboards

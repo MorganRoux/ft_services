@@ -7,6 +7,8 @@ RUN apk add grafana
 WORKDIR /usr/share/grafana
 COPY sample.ini ./conf/custom.ini
 COPY provisioning/datasources.yaml ./conf/provisioning/datasources/datasources.yaml
+COPY provisioning/dashboards /etc/dashboards 
+COPY provisioning/providers.yaml ./conf/provisioning/dashboards/providers.yaml
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk add telegraf
