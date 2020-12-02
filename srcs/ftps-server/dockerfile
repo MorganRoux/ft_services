@@ -24,6 +24,7 @@ RUN mkdir -p /data/www
 COPY index.html /data/www/index.html
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk update
 RUN apk add telegraf
 RUN mkdir /etc/telegraf && rm /etc/telegraf.conf
 COPY telegraf.conf /etc/telegraf/
