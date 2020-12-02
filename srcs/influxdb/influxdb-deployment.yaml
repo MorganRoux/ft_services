@@ -65,8 +65,8 @@ spec:
         livenessProbe:
           exec:
             command:
-              - cat
-              - /etc/health
+              - pgrep
+              - influxd
           initialDelaySeconds: 1
           periodSeconds: 1
         volumeMounts:

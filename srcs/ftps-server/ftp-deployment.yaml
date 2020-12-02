@@ -51,7 +51,7 @@ spec:
           livenessProbe:
             exec:
               command:
-                - cat
-                - /etc/health
+                - pgrep
+                - vsftpd
             initialDelaySeconds: 1
             periodSeconds: 1

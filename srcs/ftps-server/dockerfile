@@ -29,9 +29,5 @@ RUN apk add telegraf
 RUN mkdir /etc/telegraf && rm /etc/telegraf.conf
 COPY telegraf.conf /etc/telegraf/
 
-# EXPOSE 20 21 
-# EXPOSE  13450
-COPY health /etc/health
-
 CMD sh ./entrypoint.sh
 

@@ -16,6 +16,5 @@ RUN apk add vim telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/te
 RUN mkdir /etc/telegraf && rm /etc/telegraf.conf
 COPY telegraf.conf /etc/telegraf/
 
-COPY health /etc/health
 COPY entrypoint.sh ./entrypoint.sh
 CMD sh ./entrypoint.sh

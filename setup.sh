@@ -2,6 +2,7 @@ minikube stop
 minikube delete
 minikube start --cpus=2 --disk-size 11000 --vm-driver virtualbox --extra-config=apiserver.service-node-port-range=1-35000
 minikube addons enable metallb
+minikube addons enable dashboard
 
 #=========
 eval $(minikube docker-env)
@@ -34,4 +35,3 @@ kubectl get pvc
 MINIKUBE_IP=`minikube ip`;
 
 echo Minikube ip : $MINIKUBE_IP
-minikube addons enable dashboard

@@ -79,8 +79,8 @@ spec:
         livenessProbe:
           exec:
             command:
-              - cat
-              - /etc/health
+              - pgrep
+              - mysqld
           initialDelaySeconds: 1
           periodSeconds: 1
         volumeMounts:

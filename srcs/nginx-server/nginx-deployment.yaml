@@ -45,7 +45,7 @@ spec:
           livenessProbe:
             exec:
               command:
-                - cat
-                - /etc/health
+                - pgrep
+                - nginx
             initialDelaySeconds: 1
             periodSeconds: 1
